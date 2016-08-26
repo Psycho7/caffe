@@ -12,7 +12,7 @@ layer {
   }
   data_param {
     source: "examples/alexnet/cifar10_train_lmdb"
-    batch_size: 128
+    batch_size: 50
     backend: LMDB
   }
 }
@@ -26,7 +26,7 @@ layer {
   }
   data_param {
     source: "examples/alexnet/cifar10_test_lmdb"
-    batch_size: 256
+    batch_size: 100
     backend: LMDB
   }
 }
@@ -44,8 +44,8 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 5
-    kernel_size: 3
+    num_output: 96
+    kernel_size: 11
     stride: 1
     weight_filler {
       type: "xavier"
@@ -68,7 +68,7 @@ layer {
   top: "pool1"
   pooling_param {
     pool: MAX
-    kernel_size: 3
+    kernel_size: 5
     stride: 2
   }
 }
@@ -86,8 +86,8 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 2
-    kernel_size: 3
+    num_output: 256
+    kernel_size: 5
     weight_filler {
       type: "xavier"
     }
@@ -127,7 +127,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 3
+    num_output: 384
     kernel_size: 3
     weight_filler {
       type: "xavier"
@@ -157,7 +157,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 5
+    num_output: 384
     pad: 1
     kernel_size: 3
     stride: 1
@@ -189,8 +189,8 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 5
-    kernel_size: 3
+    num_output: 256
+    kernel_size: 1
     weight_filler {
       type: "xavier"
     }
@@ -219,7 +219,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 1000
+    num_output: 4096
     weight_filler {
       type: "xavier"
     }
