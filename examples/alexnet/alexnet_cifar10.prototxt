@@ -45,7 +45,7 @@ layer {
   }
   convolution_param {
     num_output: 96
-    kernel_size: 9
+    kernel_size: 11
     stride: 1
     weight_filler {
       type: "xavier"
@@ -70,6 +70,7 @@ layer {
     pool: MAX
     kernel_size: 5
     stride: 1
+    pad: 1
   }
 }
 layer {
@@ -88,6 +89,7 @@ layer {
   convolution_param {
     num_output: 256
     kernel_size: 5
+    group: 2
     weight_filler {
       type: "xavier"
     }
@@ -127,6 +129,7 @@ layer {
   }
   convolution_param {
     num_output: 384
+    group: 2
     kernel_size: 3
     weight_filler {
       type: "xavier"
