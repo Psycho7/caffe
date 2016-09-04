@@ -7,9 +7,9 @@ layer {
   include {
     phase: TRAIN
   }
-  transform_param {
-    mirror: true
-  }
+#  transform_param {
+#    mirror: true
+#  }
   data_param {
     source: "examples/alexnet/cifar10_train_lmdb"
     batch_size: 50
@@ -26,7 +26,7 @@ layer {
   }
   data_param {
     source: "examples/alexnet/cifar10_test_lmdb"
-    batch_size: 100
+    batch_size: 200
     backend: LMDB
   }
 }
